@@ -1,0 +1,7 @@
+../../../common/testbench/tb_uart.v
+../../../common/testbench/uart_capture.v
+../../../common/testbench/uart_launch.v
+../design/apb_sync_uart.v
++incdir+../../../common/testcases/
++incdir+../../../common/testbench/
++incdir+../design/
