@@ -67,7 +67,7 @@ task controller_send;
             while (read_data[0]) begin
                 bus_read(UART_STAT_OFFSET, read_data);
             end
-            bus_write(UART_STAT_OFFSET, message[128*8-1:128*8-8]);
+            bus_write(UART_DATA_OFFSET, message[128*8-1:128*8-8]);
             $write("%s", message[128*8-1:128*8-8]);
             message = message << 8;
         end

@@ -1,8 +1,9 @@
 testcase:=tx_hello
 
 compile:
-	vcs +v2k -full64 -debug_access+all +define+$(testcase) -f uart.vc -P $(VERDI_HOME)/share/PLI/VCS/LINUX64/novas.tab \
-	$(VERDI_HOME)/share/PLI/VCS/LINUX64/pli.a
+	vcs -full64 -sverilog +v2k -debug_access+all +define+$(testcase) -f uart.vc -P $(VERDI_HOME)/share/PLI/VCS/LINUX64/novas.tab \
+	$(VERDI_HOME)/share/PLI/VCS/LINUX64/pli.a \
+	-LDFLAGS -Wl,--no-as-needed
 
 sim:
 	./simv

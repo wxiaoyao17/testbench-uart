@@ -1,0 +1,9 @@
+# lecture/apb_sync_uart/sim
+lecture/apb_sync_uart/sim/csrc
+lecture/apb_sync_uart/sim/simv.daidir
+lecture/apb_sync_uart/sim/*
+
+!lecture/apb_sync_uart/sim/Makefile
+!lecture/apb_sync_uart/sim/uart.vc
+
+

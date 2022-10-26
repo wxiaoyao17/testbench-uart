@@ -16,7 +16,7 @@ module apb_sync_uart (
     output wire         tx_int,
     output wire         rx_int,
     output wire         tx,
-    output wire         rx
+    input wire          rx
 );
 
     `include "uart_const_pkg.v"
@@ -326,5 +326,8 @@ module apb_sync_uart (
         default: nxt_rx_state = IDLE;
     endcase
   end
+
+  assign tx_int = reg_tx_int;
+  assign rx_int = reg_rx_int;
 
 endmodule

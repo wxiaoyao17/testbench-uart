@@ -10,7 +10,7 @@ module uart_capture (
     input   wire      RESETn,           // Power on reset
     input   wire      CLK,              // Clock (baud rate)
     input   wire      RXD,              // Received data
-    output  wire      SIMULATIONEND    // Simulation end indicator
+    output  wire      SIMULATIONEND     // Simulation end indicator
 );
 
     reg  [8:0]      rx_shift_reg;
@@ -79,7 +79,7 @@ module uart_capture (
                 begin
                     tube_string[string_length] = rx_shift_reg[8:1];
                     string_length = string_length + 1;
-                    if (string_length > 79) // line too long, display and clear buffer
+                    if (string_length > 128) // line too long, display and clear buffer
                     begin
                         tube_string[string_length] = 8'h00;
                         $write("%t UART device captures: ", $time);
